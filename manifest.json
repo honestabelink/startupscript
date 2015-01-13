@@ -1,0 +1,15 @@
+{
+   "info" : {
+      "name" : "startupscript",
+      "version" : 1
+   },
+
+   "client_init_script" : "file(client_init)",
+   "server_init_script" : "file(server_init)",
+ 
+	"ui" : {
+      "js" : [
+         "file(init.js)"
+      ]
+   }
+}
