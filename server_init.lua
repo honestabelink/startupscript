@@ -1,5 +1,6 @@
 local Point3=_radiant.csg.Point3
 local Point2=_radiant.csg.Point2
+local Cube3=_radiant.csg.Cube3
 
 local startupscript = class()
 
@@ -23,6 +24,9 @@ function startupscript:init()
         			})
         			town:set_banner(banner_entity)
         			radiant.entities.turn_to(banner_entity,180)
+
+        			local camp_y = banner_entity:add_component('mob'):get_grid_location().y;
+
         			local camp_x=pt.x
         			local camp_z=pt.z
 
@@ -73,6 +77,73 @@ function startupscript:init()
 
 					self:place_item(pop, 'beehivemod:apiarist:outfit', camp_x+25 , camp_z+9)
 					self:place_item(pop, 'beehivemod:beehive:testing', camp_x+24 , camp_z+9)
+
+					--local radius = 1;
+					--local terrianedit = Point3(camp_x + 4 , camp_y, camp_z)
+					--local cube=Cube3(terrianedit+Point3(-radius,-1,-radius),terrianedit+Point3(radius+1,1+1,radius+1))
+					--radiant.terrain.add_cube(cube)
+					--210
+
+					radiant.terrain.add_point(Point3(camp_x + 8 , camp_y+10, camp_z), 300)
+					radiant.terrain.add_point(Point3(camp_x + 8 , camp_y+11, camp_z), 300)
+					radiant.terrain.add_point(Point3(camp_x + 8 , camp_y+12, camp_z), 300)
+					radiant.terrain.add_point(Point3(camp_x + 8 , camp_y+13, camp_z), 300)
+
+					radiant.terrain.add_point(Point3(camp_x + 9 , camp_y+10, camp_z), 300)
+					radiant.terrain.add_point(Point3(camp_x + 9 , camp_y+11, camp_z), 300)
+					radiant.terrain.add_point(Point3(camp_x + 9 , camp_y+12, camp_z), 300)
+					radiant.terrain.add_point(Point3(camp_x + 9 , camp_y+13, camp_z), 300)
+
+					--radiant.terrain.add_point(Point3(camp_x + 10 , camp_y+10, camp_z), 300)
+					radiant.terrain.add_point(Point3(camp_x + 10 , camp_y+11, camp_z), 300)
+					radiant.terrain.add_point(Point3(camp_x + 10 , camp_y+12, camp_z), 300)
+					--radiant.terrain.add_point(Point3(camp_x + 10 , camp_y+13, camp_z), 300)
+
+					radiant.terrain.add_point(Point3(camp_x + 7 , camp_y+10, camp_z), 300)
+					radiant.terrain.add_point(Point3(camp_x + 7 , camp_y+11, camp_z), 300)
+					radiant.terrain.add_point(Point3(camp_x + 7 , camp_y+12, camp_z), 300)
+					radiant.terrain.add_point(Point3(camp_x + 7 , camp_y+13, camp_z), 300)
+
+					--radiant.terrain.add_point(Point3(camp_x + 6 , camp_y+10, camp_z), 300)
+					radiant.terrain.add_point(Point3(camp_x + 6 , camp_y+11, camp_z), 300)
+					radiant.terrain.add_point(Point3(camp_x + 6 , camp_y+12, camp_z), 300)
+					--radiant.terrain.add_point(Point3(camp_x + 6 , camp_y+13, camp_z), 300)
+
+					-- arms
+
+					radiant.terrain.add_point(Point3(camp_x + 9 , camp_y+7, camp_z), 210)
+					radiant.terrain.add_point(Point3(camp_x + 10 , camp_y+7, camp_z), 210)
+					radiant.terrain.add_point(Point3(camp_x + 11 , camp_y+7, camp_z), 101)
+
+					radiant.terrain.add_point(Point3(camp_x + 7 , camp_y+7, camp_z), 210)
+					radiant.terrain.add_point(Point3(camp_x + 6 , camp_y+7, camp_z), 210)
+					radiant.terrain.add_point(Point3(camp_x + 5 , camp_y+7, camp_z), 101)
+
+					-- body
+					radiant.terrain.add_point(Point3(camp_x + 8 , camp_y+9, camp_z), 210)
+					radiant.terrain.add_point(Point3(camp_x + 8 , camp_y+8, camp_z), 210)
+					radiant.terrain.add_point(Point3(camp_x + 8 , camp_y+7, camp_z), 210)
+					radiant.terrain.add_point(Point3(camp_x + 8 , camp_y+6, camp_z), 210)
+					radiant.terrain.add_point(Point3(camp_x + 8 , camp_y+5, camp_z), 210)
+					radiant.terrain.add_point(Point3(camp_x + 8 , camp_y+4, camp_z), 210)
+					radiant.terrain.add_point(Point3(camp_x + 8 , camp_y+3, camp_z), 210)
+
+
+					--legs
+					radiant.terrain.add_point(Point3(camp_x + 7 , camp_y+2, camp_z), 210)					
+					radiant.terrain.add_point(Point3(camp_x + 9 , camp_y+2, camp_z), 210)
+
+					radiant.terrain.add_point(Point3(camp_x + 6 , camp_y+1, camp_z), 210)
+					radiant.terrain.add_point(Point3(camp_x + 10 , camp_y+1, camp_z), 210)
+
+					radiant.terrain.add_point(Point3(camp_x + 5 , camp_y, camp_z), 101)
+					radiant.terrain.add_point(Point3(camp_x + 11 , camp_y, camp_z), 101)
+
+
+					--stonehearth.mining:mine_point(Point3(camp_x + 4, camp_y, camp_z))
+					--stonehearth.mining:mine_point(Point3(camp_x + 4, camp_y+1, camp_z))
+					--stonehearth.mining:mine_point(Point3(camp_x + 4, camp_y-1, camp_z))
+					--stonehearth.mining:mine_point(Point3(camp_x + 5, camp_y, camp_z))
 				end)
 
 				return radiant.events.UNLISTEN
